@@ -1,0 +1,15 @@
+{
+  "name": "dpopay/dpopay",
+  "description": "DPO Pay ",
+  "type": "library",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Lindley Worthington",
+      "email": "lindley@appinlet.com"
+    }
+  ],
+  "require": {
+    "dpo/dpo-pay-common": "v1.0.1"
+  }
+}
