@@ -1,0 +1,28 @@
+{
+  "description": "DPO Pay",
+  "name": "DPO Pay",
+  "type": "payment",
+  "version": "1.0.0",
+  "authors": {
+    "name": "App Inlet",
+    "email": "dpo-support@network.global",
+    "homepage": "https://dpogroup.com",
+    "role": "Developer"
+  },
+  "src": [
+    {
+      "action": "add",
+      "type": "file",
+      "path": "dpopay.php"
+    },
+    {
+      "action": "copy",
+      "type": "dir",
+      "path": "lib/dpopay"
+    }
+  ],
+  "require": {
+    "platform": "True"
+  },
+  "class": "dpopay"
+}
