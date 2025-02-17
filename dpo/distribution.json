@@ -2,7 +2,7 @@
   "description": "DPO Pay",
   "name": "DPO Pay",
   "type": "payment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": {
     "name": "App Inlet",
     "email": "dpo-support@network.global",

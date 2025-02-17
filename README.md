@@ -1,15 +1,25 @@
 # DPO_OsCommerce
 
-## DPO Pay OsCommerce plugin v1.0.0 for OsCommerce v4.13
+## DPO Pay OsCommerce plugin v1.0.1 for OsCommerce v4.14
 
-This is the DPO Pay plugin for WooCoOsCommercemmerce. Please feel free to contact
+This is the DPO Pay plugin for OsCommerce. Please feel free to contact
 the [DPO Pay support team](https://dpogroup.com/contact-us/) should you require any assistance.
 
 ## Installation
 
-Please navigate to the [releases page](https://github.com/DPO-Group/DPO_OsCommerce/releases), download the
-latest release (v1.0.0) and unzip. You will then be able to follow the integration guide PDF which is included in the
-zip.
+### Step 1
+
+- Login to the OsCommerce admin area, then navigate to App Shop.
+- Navigate to Local Storage, click Choose file, select dpo.zip and then click Upload.
+- To deploy, click the green + circle.
+- Choose your preferred sales channel, then click Ok.
+
+### Step 2
+
+- Go to Modules -> Payment -> Online.
+- Select the DPO Pay payment method by clicking it.
+- Click the Edit button on the right-hand pane.
+- Set your configuration values, then click
 
 ## Collaboration
 
