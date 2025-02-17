@@ -165,8 +165,13 @@ class dpopay extends ModulePayment
             'redirectURL'       => tep_href_link(
                 'callback/webhooks.payment.' . $this->code,
                 "action=redirect&orders_id=$order->order_id&reference=$order->order_id",
-                'SSL'
+                'SSL',
             ),
+            'backURL'           => tep_href_link(
+                'callback/webhooks.payment.' . $this->code,
+                "action=redirect&orders_id=$order->order_id&reference=$order->order_id",
+                'SSL',
+            )
         ];
 
         $token = $dpo->createToken($data);
@@ -369,9 +374,7 @@ class dpopay extends ModulePayment
             $resultExplanation = $verify->ResultExplanation->__toString();
             if ($result === '000') {
                 // Transaction paid
-                $transactionAmount = (double)($verify->TransactionAmount->__toString());
-                $allocationAmount  = (double)($verify->AllocationAmount->__toString());
-                $orderNetAmount    = $transactionAmount - $allocationAmount;
+                $orderNetAmount = (double)($verify->TransactionAmount->__toString());
 
                 $order->orders_status  = $this->paidStatus;
                 $order->payment_method = $this->code;
@@ -438,6 +441,17 @@ class dpopay extends ModulePayment
                     tep_href_link(
                         FILENAME_CHECKOUT_PAYMENT,
                         'error_message=User cancelled transaction',
+                        'SSL',
+                        true,
+                        false
+                    )
+                );
+            } elseif ($result === '900') {
+                // Transaction not paid yet
+                tep_redirect(
+                    tep_href_link(
+                        FILENAME_CHECKOUT_PAYMENT,
+                        'error_message=Transaction not paid yet',
                         'SSL',
                         true,
                         false
